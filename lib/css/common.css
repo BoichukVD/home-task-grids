@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden; 
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+body {
+    min-width: 320px;
+}
+
+a {
+    text-decoration: none;
+}
