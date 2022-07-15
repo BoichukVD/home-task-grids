@@ -1,49 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="lib/css/index.css">
     <title>Home task</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        } 
+
+        .main { 
+            padding: 0 42px;
+        }
+
+        .container {
+            min-width: 320px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .list {
+            display: grid;
+            gap: 24px
+        }
+
+        @media screen and (min-width:480px) {
+            .list {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media screen and (min-width:640px) {
+            .list {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        @media screen and (min-width:800px) {
+            .list {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Home task</h1>
+    <header> 
+        <div class="logo">LOGO</div>
+        <nav>Here must be navigation</nav>
     </header>
-    <div class="container">
-        <div class="list">
-            <div>
-                <img src="" alt="">
-                <h2></h2>
-                <p></p>
-            </div>
-            <div>
-                <img src="" alt="">
-                <h2></h2>
-                <p></p>
-            </div>
-            <div>
-                <img src="" alt="">
-                <h2></h2>
-                <p></p>
-            </div>
-            <div>
-                <img src="" alt="">
-                <h2></h2>
-                <p></p>
-            </div>
-            <div>
-                <img src="" alt="">
-                <h2></h2>
-                <p></p>
-            </div>
-            <div>
-                <img src="" alt="">
-                <h2></h2>
-                <p></p>
+    <main>
+        <h1>Home task</h1>
+        <div class="container"> 
+            <div class="list">
+                <div>
+                    <img src="img/163386255.jpg" alt="Ноутбук Acer Aspire 7 A715-42G-R0VS">
+                    <h2> Ноутбук Acer Aspire 7 A715-42G-R0VS (NH.QBFEU.00A) Charcoal Black </h2>
+                    <button>В корзину</button>
+                </div>
+                <div>
+                    <img src="img/248528822.jpg" alt="Ноутбук ASUS ExpertBook B1 B1500CEAE-BQ1663">
+                    <h2> Ноутбук ASUS ExpertBook B1 B1500CEAE-BQ1663 (90NX0441-M20230) Star Black / Intel Core i3-1115G4
+                        /
+                        RAM 8 ГБ / SSD 256 ГБ </h2>
+                    <button>В корзину</button>
+                </div>
+                <div>
+                    <img src="img/252192898.jpg" alt="Ноутбук Lenovo V14 G2 ALC (82KC003NRA) Black">
+                    <h2> Ноутбук Lenovo V14 G2 ALC (82KC003NRA) Black </h2>
+                    <button>В корзину</button>
+                </div>
+                <div>
+                    <img src="img/270525898.jpg" alt="Ноутбук ASUS TUF Gaming A17 FA706IHR-HX029">
+                    <h2> Ноутбук ASUS TUF Gaming A17 FA706IHR-HX029 (90NR07D5-M000P0) Graphite Black / AMD Ryzen 5 4600H
+                        /
+                        RAM 16 ГБ / SSD 512 ГБ / nVidia GeForce GTX 1650 </h2>
+                    <button>В корзину</button>
+                </div>
+                <div>
+                    <img src="img/272561687.jpg" alt="Ноутбук HP Pavilion Gaming 15-ec2024ua">
+                    <h2> Ноутбук HP Pavilion Gaming 15-ec2024ua (5A0U9EA) Shadow Black </h2>
+                    <button>В корзину</button>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
+    <footer>Ту буде футер</footer>
 </body>
+
 </html>
