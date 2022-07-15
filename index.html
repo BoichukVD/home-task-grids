@@ -8,92 +8,225 @@
     <link rel="stylesheet" href="lib/css/index.css">
     <title>Home task</title>
     <style>
+        :root {
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
+            color: #202c38;
+            --header-footer-bg-color: #35506f;
+            --header-footer-main-color: #fbfbfb;
+            --products-list-item-bg-color: #fafbfc;
+            --products-list-button-bg-color: #0792bf;
+            --products-list-button-color: #fff;
+            --products-list-title-color: #004e68;
+        }
+
         body {
+            display: grid;
+            grid-template-areas:
+                "header header header"
+                "nav nav nav"
+                "main main main"
+                "ads ads ads"
+                "footer footer footer";
+            grid-template-rows: 60px 60px 1fr 200px 60px;
+            grid-template-columns: 20% 1fr 15%;
+            grid-gap: 10px;
             margin: 0;
+            background: #e9ebee;
+            min-width: 320px;
+            min-height: 100vh;
+        }
+
+        body {
+            grid-template-areas:
+                "header header header"
+                "nav nav nav"
+                "main main main"
+                "ads ads ads"
+                "footer footer footer";
+            grid-template-rows: 60px 60px 1fr 200px 60px;
         }
 
         img {
             display: block;
             width: 100%;
             height: auto;
-        } 
+        }
 
-        .main { 
-            padding: 0 42px;
+        header,
+        footer {
+            background: var(--header-footer-bg-color);
+            color: var(--header-footer-main-color);
+            font-weight: bold;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 24px;
+        }
+
+        .page-nav,
+        .page-content,
+        .page-ads {
+            padding: 10px;
+        }
+
+        .page-nav,
+        .page-ads {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h3 {
+            font-size: 13px;
+            padding: 0 4px;
+            color: var(--products-list-title-color);
+        }
+
+        .page-header {
+            grid-area: header;
+        }
+
+        .page-footer {
+            grid-area: footer;
+        }
+
+        .page-content {
+            grid-area: main;
+        }
+
+        .page-nav {
+            grid-area: nav;
+            border-bottom: 1px solid var(--products-list-title-color);
+        }
+
+        .page-ads {
+            grid-area: ads;
+            border-top: 1px solid var(--products-list-title-color); 
         }
 
         .container {
-            min-width: 320px;
             max-width: 1200px;
             margin: auto;
         }
 
-        .list {
+        .products-list {
             display: grid;
             gap: 24px
         }
 
+        .products-list>div {
+            display: flex;
+            flex-direction: column;
+            background-color: var(--products-list-item-bg-color);
+            border-radius: 5px;
+
+        }
+
+        .products-list button {
+            background: var(--products-list-button-bg-color);
+            border: 0;
+            color: var(--products-list-button-color);
+            line-height: 2rem;
+            margin-top: auto;
+        }
+
         @media screen and (min-width:480px) {
-            .list {
+            .products-list {
                 grid-template-columns: 1fr 1fr;
             }
         }
 
-        @media screen and (min-width:640px) {
-            .list {
+        @media screen and (min-width:960px) {
+            .products-list {
                 grid-template-columns: 1fr 1fr 1fr;
             }
         }
 
+        @media screen and (min-width:1280px) {
+            .products-list {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
         @media screen and (min-width:800px) {
-            .list {
-                grid-template-columns: 1fr 1fr 1fr 1fr;
+            body {
+                grid-template-areas:
+                    "header header header"
+                    "nav main main"
+                    "ads ads ads"
+                    "footer footer footer";
+                grid-template-rows: 60px 1fr 200px 60px;
+            }
+
+            .page-nav { 
+                border-bottom: 0;
+                border-right: 1px solid var(--products-list-title-color);
+            }
+        }
+
+        @media screen and (min-width:1120px) {
+            body {
+                grid-template-areas:
+                    "header header header"
+                    "nav main ads"
+                    "footer footer footer";
+                grid-template-rows: 60px 1fr 60px;
+            }
+
+            .page-ads {
+                border-top: 0;
+                border-left: 1px solid var(--products-list-title-color);
             }
         }
     </style>
 </head>
+
 <body>
-    <header> 
+    <header class="page-header">
         <div class="logo">LOGO</div>
-        <nav>Here must be navigation</nav>
+
     </header>
-    <main>
-        <h1>Home task</h1>
-        <div class="container"> 
-            <div class="list">
+    <nav class="page-nav">Here must be navigation</nav>
+    <main class="page-content">
+        <h1>Products catalog</h1>
+        <div class="container">
+            <div class="products-list">
                 <div>
                     <img src="img/163386255.jpg" alt="Ноутбук Acer Aspire 7 A715-42G-R0VS">
-                    <h2> Ноутбук Acer Aspire 7 A715-42G-R0VS (NH.QBFEU.00A) Charcoal Black </h2>
+                    <h3> Ноутбук Acer Aspire 7 A715-42G-R0VS (NH.QBFEU.00A) Charcoal Black </h3>
                     <button>В корзину</button>
                 </div>
                 <div>
                     <img src="img/248528822.jpg" alt="Ноутбук ASUS ExpertBook B1 B1500CEAE-BQ1663">
-                    <h2> Ноутбук ASUS ExpertBook B1 B1500CEAE-BQ1663 (90NX0441-M20230) Star Black / Intel Core i3-1115G4
+                    <h3> Ноутбук ASUS ExpertBook B1 B1500CEAE-BQ1663 (90NX0441-M20230) Star Black / Intel Core i3-1115G4
                         /
-                        RAM 8 ГБ / SSD 256 ГБ </h2>
+                        RAM 8 ГБ / SSD 256 ГБ </h3>
                     <button>В корзину</button>
                 </div>
                 <div>
                     <img src="img/252192898.jpg" alt="Ноутбук Lenovo V14 G2 ALC (82KC003NRA) Black">
-                    <h2> Ноутбук Lenovo V14 G2 ALC (82KC003NRA) Black </h2>
+                    <h3> Ноутбук Lenovo V14 G2 ALC (82KC003NRA) Black </h3>
                     <button>В корзину</button>
                 </div>
                 <div>
                     <img src="img/270525898.jpg" alt="Ноутбук ASUS TUF Gaming A17 FA706IHR-HX029">
-                    <h2> Ноутбук ASUS TUF Gaming A17 FA706IHR-HX029 (90NR07D5-M000P0) Graphite Black / AMD Ryzen 5 4600H
+                    <h3> Ноутбук ASUS TUF Gaming A17 FA706IHR-HX029 (90NR07D5-M000P0) Graphite Black / AMD Ryzen 5 4600H
                         /
-                        RAM 16 ГБ / SSD 512 ГБ / nVidia GeForce GTX 1650 </h2>
+                        RAM 16 ГБ / SSD 512 ГБ / nVidia GeForce GTX 1650 </h3>
                     <button>В корзину</button>
                 </div>
                 <div>
                     <img src="img/272561687.jpg" alt="Ноутбук HP Pavilion Gaming 15-ec2024ua">
-                    <h2> Ноутбук HP Pavilion Gaming 15-ec2024ua (5A0U9EA) Shadow Black </h2>
+                    <h3> Ноутбук HP Pavilion Gaming 15-ec2024ua (5A0U9EA) Shadow Black </h3>
                     <button>В корзину</button>
                 </div>
             </div>
         </div>
     </main>
-    <footer>Ту буде футер</footer>
+    <aside class="page-ads">Here is site ads</aside>
+    <footer class="page-footer">Here will be footer</footer>
 </body>
 
 </html>
