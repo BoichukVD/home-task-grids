@@ -23,29 +23,19 @@
         body {
             display: grid;
             grid-template-areas:
-                "header header header"
-                "nav nav nav"
-                "main main main"
-                "ads ads ads"
-                "footer footer footer";
+                "header"
+                "nav"
+                "main"
+                "ads"
+                "footer";
             grid-template-rows: 60px 60px 1fr 200px 60px;
-            grid-template-columns: 20% 1fr 15%;
+            grid-template-columns: 1fr;
             grid-gap: 10px;
             margin: 0;
             background: #e9ebee;
             min-width: 320px;
             min-height: 100vh;
-        }
-
-        body {
-            grid-template-areas:
-                "header header header"
-                "nav nav nav"
-                "main main main"
-                "ads ads ads"
-                "footer footer footer";
-            grid-template-rows: 60px 60px 1fr 200px 60px;
-        }
+        } 
 
         img {
             display: block;
@@ -157,7 +147,8 @@
                     "nav main main"
                     "ads ads ads"
                     "footer footer footer";
-                grid-template-rows: 60px 1fr 200px 60px;
+                grid-template-rows: 60px 1fr 200px 60px; 
+                grid-template-columns: 20% 1fr 15%;
             }
 
             .page-nav { 
